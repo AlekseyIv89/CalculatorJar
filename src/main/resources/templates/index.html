@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор</title>
+    <style>
+        .center {
+            width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h4>Калькулятор вычисляет сумму, разность, произведение и деление арабских и римкских чисел</h4>
+        <h4>Введите, выражение вида "5 * 6" или "VII + IX"</h4>
+        <form action="#" method="post" th:action="@{/calc}" th:object="${}">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="in"></label>
+                            <input type="text" id="in"/>
+                        </td>
+                        <td>
+                            <input type="submit" value="Вычислить"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 th:text="'Ответ: ' + ${calculator}"></h3>
+        </form>
+    </div>
+</body>
+</html>
